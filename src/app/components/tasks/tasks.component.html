@@ -6,5 +6,9 @@
     [ngStyle]="{ 'margin-left': '10px', cursor: 'pointer' }"
     (click)="getTasks()"
   ></fa-icon>
-  <app-task-item *ngFor="let task of tasks" [task]="task"></app-task-item>
+  <app-task-item
+    *ngFor="let task of tasks"
+    [task]="task"
+    (deleteTask)="handleDeleteTask($event)"
+  ></app-task-item>
 </ng-template>
