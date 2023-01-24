@@ -34,4 +34,17 @@ export class TasksComponent {
       this.getTasks();
     });
   }
+
+  handleReminder(task: Task): void {
+    this.loading = true;
+    task.reminder = !task.reminder;
+    this.taskService.updateTask(task).subscribe({
+      next: () => {
+        this.getTasks();
+      },
+      error: (e) => {
+        console.log('There was an error', e);
+      },
+    });
+  }
 }

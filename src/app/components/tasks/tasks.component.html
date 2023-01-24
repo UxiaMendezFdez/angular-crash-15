@@ -10,5 +10,6 @@
     *ngFor="let task of tasks"
     [task]="task"
     (deleteTask)="handleDeleteTask($event)"
+    (toggleReminder)="handleReminder(task)"
   ></app-task-item>
 </ng-template>
