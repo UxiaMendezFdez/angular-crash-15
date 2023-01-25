@@ -1,4 +1,12 @@
-<div *ngIf="loading; else tasksBox">Loading...</div>
+<app-add-task
+  [open]="showAddTask"
+  (addTask)="handleAddTask($event)"
+></app-add-task>
+
+<div *ngIf="loading && !error; else tasksBox">Loading...</div>
+<div *ngIf="!loading && error" [ngStyle]="{ color: 'red' }">
+  {{ error }}
+</div>
 
 <ng-template #tasksBox>
   <fa-icon

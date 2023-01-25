@@ -15,7 +15,7 @@ export class TaskItemComponent {
   faTimes = faTimes;
   faLightbulb = faLightbulb;
 
-  onDelete(id: number) {
+  onDelete(id?: number) {
     this.deleteTask.emit(id);
   }
   onReminder(task: Task) {
